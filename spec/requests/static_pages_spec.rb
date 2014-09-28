@@ -49,7 +49,7 @@ describe "Static page" do
 		end
 
 		it "should have the title 'Contact'" do
-	  	visit '/static_pages/about'
+	  	visit '/static_pages/contact'
 	  	expect(page).to have_title("Ruby on Rails Tutorial Sample App | Contact")
 		end
 	end
