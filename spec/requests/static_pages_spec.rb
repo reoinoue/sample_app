@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "Static page" do
+describe "Static pages" do
 
-  subject {page}
+  subject { page }
 
   describe "Home page" do
     before { visit root_path }
