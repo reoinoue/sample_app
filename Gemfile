@@ -36,3 +36,14 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
+
+gem 'pry-rails', group: [:development, :test]
+gem 'pry-byebug', group: [:development, :test]
+gem 'hirb', group: [:development, :test]
+gem 'hirb-unicode', group: [:development, :test]
+# error画面をリッチにする
+gem 'better_errors', group: [:development, :test]
+# better_errorと合わせて使うと、error画面でコマンドが入力して確認できたりするやつ
+gem 'binding_of_caller', group: [:development, :test]
+gem 'spring', group: [:development, :test]
+
