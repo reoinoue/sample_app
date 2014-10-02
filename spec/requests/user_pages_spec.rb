@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "USER PAGES" do
+describe "User pages" do
 	subject { page }
 
   describe "profile page" do
@@ -64,6 +64,23 @@ describe "USER PAGES" do
         # it { should have_selector('div.alert.alert-success', text: 'Welcome') }
         it { should have_welcome_message('Welcome') }
       end
+    end
+  end
+
+  describe "edit" do
+    let(:user) { FactoryGirl.create(:user) }
+    before { visit edit_user_path(user) }
+
+    describe "page" do
+      it { should have_content("Update your profile") }
+      it { should have_title("Edit user") }
+      it { shoult have_link('change', href: 'http/gravatar.com/emails')}
+    end
+
+    describe "with invalid information" do
+      before { click_button "Save changes" }
+
+      it { should have_content('error') }
     end
   end
 end
